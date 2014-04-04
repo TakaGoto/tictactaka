@@ -1,6 +1,6 @@
-taka_tic_tac-toe
-================
+# Tic Tac Toe Engine in Ruby
 
-tic tac toe gem
-
-
+```
+  bundle install
+  rspec
+```

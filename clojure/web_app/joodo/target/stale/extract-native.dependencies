@@ -1,0 +1,1 @@
+([:dependencies ([org.clojure/clojure "1.5.1"] [joodo/joodo "0.10.0"] [ttt_clojure/ttt_clojure "1.2.3-SNAPSHOT"] [org.clojure/tools.nrepl "0.2.3" :exclusions ([org.clojure/clojure])] [clojure-complete/clojure-complete "0.2.3" :exclusions ([org.clojure/clojure])] [speclj/speclj "2.5.0"])])

@@ -4,5 +4,3 @@ gem 'taka_tic_tac_toe', :git => "https://github.com/TakaGoto/taka_tic_tac_toe.gi
 gem 'rack'
 gem 'rake'
 gem 'pry'
-
-hello dad

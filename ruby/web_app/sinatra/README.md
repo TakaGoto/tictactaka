@@ -1,7 +1,8 @@
-Sinatra App
+# Ruby Tic Tac Toe with Sinatra App
 
-to play:
+## to play:
 
+```
   bundle install
-
   type 'ruby config.ru' from the root directory in terminal
+```

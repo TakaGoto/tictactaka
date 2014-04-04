@@ -70,6 +70,6 @@
       (with-out-str (it)))
 
     (it "gets user player move"
-      (should= "5"
+      (should= 5
         (with-in-str "5\n"
           (ask-player-move (ui-console)))))))
