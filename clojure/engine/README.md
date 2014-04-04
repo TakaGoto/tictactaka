@@ -1,9 +1,11 @@
-Must use leiningen to play and test:
+# Engine for Tic Tac Toe in clojure
 
+## Requirements
+ - [leiningen](http://leiningen.org/)
+
+## To Test
+
+```
 lein deps
-
-lein test
-
-To play:
-
-lein trampoline run
+lein spec
+```
