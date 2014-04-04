@@ -1,0 +1,5 @@
+target :test do
+  link_with 'specs'
+
+  pod 'OCDSpec2'
+end

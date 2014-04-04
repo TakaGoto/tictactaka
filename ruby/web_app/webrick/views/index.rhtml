@@ -1,0 +1,12 @@
+<head>
+  <body>
+    <p>
+      <%= @game.ui.messages[:message] %>
+      <%= GamePresenter.generate_board(@game.board.to_blanks) %>
+      <% if @game.over %>
+        <p>play again?</p>
+        <a href="/start">yes</a>
+      <% end %>
+    </p>
+  </body>
+</head>

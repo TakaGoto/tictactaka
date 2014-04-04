@@ -1,0 +1,12 @@
+require 'rspec/core/rake_task'
+require 'cucumber/rake/task'
+
+RSpec::Core::RakeTask.new(:tests) do |t|
+end
+
+Cucumber::Rake::Task.new(:tests) do |t|
+  t.cucumber_opts = "features --format pretty"
+end
+
+task :default => :tests
+

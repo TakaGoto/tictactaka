@@ -1,0 +1,5 @@
+source "https://rubygems.org"
+
+gem 'taka_tic_tac_toe', :git => "https://github.com/TakaGoto/taka_tic_tac_toe.git"
+gem 'pry'
+gem 'rake'

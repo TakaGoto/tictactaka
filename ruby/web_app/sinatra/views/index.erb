@@ -1,0 +1,13 @@
+<html>
+  <head>
+    <title>
+      Tic Tac Toe Sinatra
+    </title>
+  </head>
+  <body>
+    <%= TTTOptionPresenter.generate_options({"player_one" => ["human", "computer"],
+                                             "player_two" => ["human", "computer"],
+                                             "board_size" => [3, 4]}) %>
+  </body>
+</html>
+

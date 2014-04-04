@@ -1,0 +1,11 @@
+<html>
+  <head>
+    <title> </title>
+  </head>
+  <body>
+    <%= BoardPresenter.generate_message(@game.ui.messages[:message]) %>
+    <%= BoardPresenter.generate_board(@game.board.to_blanks) %>
+    <%= BoardPresenter.generate_play_again(@game.board.to_s) %>
+  </body>
+</html>
+
