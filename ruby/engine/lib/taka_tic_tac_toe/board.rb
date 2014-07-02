@@ -3,6 +3,22 @@ module TakaTicTacToe
     attr_accessor :slots, :length
     attr_reader :width, :win_comb
 
+    def self.parse(board)
+      parsed_board = self.new
+      parsed_board.board_size(4) if board.length > 9
+      parse_board = []
+      temp_board = board.split('')
+      temp_board.each_index do |slot|
+        if temp_board[slot] == '_' || temp_board[slot].to_i != 0
+          parse_board << (slot + 1).to_s
+        else
+          parse_board << temp_board[slot]
+        end
+      end
+      parsed_board.slots = parse_board
+      parsed_board
+    end
+
     def initialize
       @slots = %w[1 2 3 4 5 6 7 8 9]
       @length = 3
@@ -27,22 +43,6 @@ module TakaTicTacToe
           blanks << slots
         end
       end
-    end
-
-    def self.parse(board)
-      parsed_board = self.new
-      parsed_board.board_size(4) if board.length > 9
-      parse_board = []
-      temp_board = board.split('')
-      temp_board.each_index do |slot|
-        if temp_board[slot] == '_' || temp_board[slot].to_i != 0
-          parse_board << (slot + 1).to_s
-        else
-          parse_board << temp_board[slot]
-        end
-      end
-      parsed_board.slots = parse_board
-      parsed_board
     end
 
     def get(index)
