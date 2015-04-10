@@ -1,5 +1,6 @@
 ### Clojure
 
+.DS_Store
 /target
 /lib
 /classes
