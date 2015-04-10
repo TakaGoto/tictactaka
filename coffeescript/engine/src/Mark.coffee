@@ -1,0 +1,3 @@
+class Mark
+  toString: ->
+    "X"

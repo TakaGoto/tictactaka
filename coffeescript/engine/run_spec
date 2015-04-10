@@ -1,0 +1,3 @@
+#!/bin/bash
+
+open SpecRunner.html && coffee -w -o dist -cb src spec
