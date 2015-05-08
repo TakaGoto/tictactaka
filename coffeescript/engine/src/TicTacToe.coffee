@@ -4,18 +4,19 @@ class TicTacToe
 
   @makeMove: (setup) ->
     game = new TicTacToe(setup)
-
-    if game.board.emptySpaces() % 2 != 0
-      game.board.placeMark(setup.nextMove, game.playerOne.mark.char)
-
-    console.log game.board.getSlot(1)
+    game.board.placeMark(setup.nextMove, game.playerOne.mark.char)
     game
 
   constructor: (setup) ->
     @board = Board.fromString(setup.board)
     @board.emptySpace = setup.emptySpace
-    @playerOne = new Player(setup.playerOne?)
-    @playerTwo = new Player(setup.playerTwo?)
+    @board.marks = [setup.playerOne.mark, setup.playerTwo.mark]
+    @playerOne = new Player(setup.playerOne)
+    @playerTwo = new Player(setup.playerTwo)
 
   isOver: ->
-    Rules.isOver(@board.toString(), "x")
+    for mark in @board.marks
+      if Rules.isOver(@board.toString(), mark) || Rules.isTie(@board.toString())
+        return true
+
+    return false

@@ -1,4 +1,6 @@
 class Board
+  DEFAULT_EMPTY_SPACE = "_"
+
   @fromString: (boardString) ->
     boardSize = Math.sqrt(boardString.length)
     board = new Board(size: boardSize)
@@ -9,7 +11,7 @@ class Board
     board
 
   constructor: (options) ->
-    @emptySpace = options.emptySpace
+    @emptySpace = options.emptySpace ?= DEFAULT_EMPTY_SPACE
     @marks = options.marks
     @slots = @buildSlots(options.size)
 

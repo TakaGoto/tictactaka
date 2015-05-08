@@ -15,3 +15,7 @@ class Rules
         return true
 
     return false
+
+  @isTie: (boardString) ->
+    board = Board.fromString(boardString)
+    !@isOver(boardString, "x") && !@isOver(boardString, "o") && board.emptySpaces() == 0
