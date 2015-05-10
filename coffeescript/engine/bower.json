@@ -9,5 +9,6 @@
   "license": "MIT",
   "ignore": [
     "spec"
-  ]
+  ],
+  "private": "true"
 }
