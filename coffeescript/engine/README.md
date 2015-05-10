@@ -2,7 +2,7 @@
 
 ### to build
 
-`coffee -o dist -cb src`
+`./build`
 
 ### to test
 

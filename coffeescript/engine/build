@@ -1,0 +1,3 @@
+#!/bin/bash
+
+cat src/*.coffee | coffee --compile --stdio > dist/tictactoe.js
