@@ -4,8 +4,21 @@ class TicTacToe
 
   @makeMove: (setup) ->
     game = new TicTacToe(setup)
-    game.board.placeMark(setup.nextMove, game.playerOne.mark.char)
+    mark = @determineNextMark(setup)
+    game.board.placeMark(setup.nextMove, mark)
     game
+
+  @determineNextMark: (setup) ->
+    emptySpaces = 0
+
+    for char in setup.board
+      if char == setup.emptySpace
+        emptySpaces++
+
+    if emptySpaces % 2 == 0
+      return setup.playerTwo.mark
+    else
+      return setup.playerOne.mark
 
   constructor: (setup) ->
     @board = Board.fromString(setup.board)

@@ -75,3 +75,45 @@ describe 'TicTacToe', ->
 
     expect(game.board.toString()).toBe("x________")
 
+  it 'makes move for second player', ->
+    setup =
+      board: "x________"
+      emptySpace: "_"
+      playerOne:
+        mark: "x"
+        type: "1"
+      playerTwo:
+        mark: "o"
+        type: "1"
+      nextMove: "2"
+
+    game = TicTacToe.makeMove(setup)
+
+    expect(game.board.toString()).toBe("xo_______")
+
+  it "returns the next player's mark", ->
+    setup =
+      board: "_________"
+      emptySpace: "_"
+      playerOne:
+        mark: "x"
+        type: "1"
+      playerTwo:
+        mark: "o"
+        type: "1"
+      nextMove: "1"
+
+    expect(TicTacToe.determineNextMark(setup)).toEqual("x")
+
+    setup =
+      board: "x________"
+      emptySpace: "_"
+      playerOne:
+        mark: "x"
+        type: "1"
+      playerTwo:
+        mark: "o"
+        type: "1"
+      nextMove: "1"
+
+    expect(TicTacToe.determineNextMark(setup)).toEqual("o")
