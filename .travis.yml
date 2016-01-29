@@ -1,6 +1,15 @@
 language: clojure
 
+before_install:
+  - "gem install bundler"
+  - "cd clojure/engine"
+
+env:
+  - CLOJURE_DIR="../engine"
+  - CLOJURE_DIR="../console"
+  - CLOJURE_DIR="../web_app/joodo"
+  - RUBY_DIR = "../../ruby/engine"
+
 script:
-  - "cd clojure/engine && lein spec"
-  - "cd clojure/console && lein spec"
-  - "cd clojure/web_app/joodo && lein spec"
+  - "cd $CLOJURE_DIR && lein deps && lein spec"
+  - "cd $RUBY_DIR && bundle install && rspec"
