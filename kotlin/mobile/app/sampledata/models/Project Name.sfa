@@ -1,0 +1,43 @@
+{
+  materials: [
+    {
+      name: 'Cylinder material 1_ee83e426-37e9-47b6-a6eb-f8758820ef3d',
+      parameters: [
+        {
+          baseColor: null,
+        },
+        {
+          baseColorTint: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+  ],
+  model: {
+    attributes: [
+      'Position',
+      'TexCoord',
+      'Orientation',
+    ],
+    collision: {},
+    file: 'sampledata/models/Project Name.obj',
+    name: 'Project Name',
+    recenter: 'root',
+    scale: 0.040000000000000001,
+  },
+  version: '0.54:2',
+}
