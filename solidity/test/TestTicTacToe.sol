@@ -1,4 +1,4 @@
-pragma solidity ^0.4.19;
+pragma solidity ^0.5.8;
 
 import "truffle/Assert.sol";
 import "truffle/DeployedAddresses.sol";
@@ -13,21 +13,41 @@ contract TestTicTacToe {
     Assert.equal(ttt.getBoard(), board, "can get and set board");
   }
 
-  function testMakeMove() public {
+  function testMakeFirstMove() public {
     TicTacToe ttt = new TicTacToe();
 
-    string memory board = "0123456789";
+    string memory board = "012345678";
     ttt.setBoard(board);
-    ttt.makeMove("X", 0);
+    ttt.makeMove(0);
 
-    Assert.equal("X123456789", ttt.getBoard(), "can make move");
+    Assert.equal("X12345678", ttt.getBoard(), "can make move");
   }
 
-  function testStartGame() public {
-    TicTacToe ttt = new TicTacToe(DeployedAddresses.tictactoe());
+  function testMakeSecondMove() public {
+    TicTacToe ttt = new TicTacToe();
 
-    ttt.startGame();
+    string memory board = "X12345678";
+    ttt.setBoard(board);
+    ttt.makeMove(1);
 
-    Assert.equal(ttt.getGame(DeployedAddresses.tictactoe()), "woooo", "can start game");
+    Assert.equal("XO2345678", ttt.getBoard(), "can make move");
   }
+
+  function testUndoMove() public {
+    TicTacToe ttt = new TicTacToe();
+
+    string memory board = "01234567X";
+    ttt.setBoard(board);
+    ttt.undoMove(8);
+
+    Assert.equal("012345678", ttt.getBoard(), "can undo move");
+  }
+
+  // function testStartGame() public {
+  //   // TicTacToe ttt = new TicTacToe(DeployedAddresses.tictactoe());
+
+  //   // ttt.startGame();
+
+  //   // Assert.equal(ttt.getGame(DeployedAddresses.tictactoe()), "woooo", "can start game");
+  // }
 }
