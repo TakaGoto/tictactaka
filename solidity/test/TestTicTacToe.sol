@@ -23,11 +23,4 @@ contract TestTicTacToe {
     Assert.equal("X123456789", ttt.getBoard(), "can make move");
   }
 
-  function testStartGame() public {
-    TicTacToe ttt = new TicTacToe(DeployedAddresses.tictactoe());
-
-    ttt.startGame();
-
-    Assert.equal(ttt.getGame(DeployedAddresses.tictactoe()), "woooo", "can start game");
-  }
 }
